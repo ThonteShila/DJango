@@ -17,7 +17,32 @@ Run 'python manage.py migrate' to apply them.
 new app in this project>python manage.py startapp calc
 Hello word>
 create new urls.py
+----------------
+from django.urls import path
+from . import views
 
+urlpatterns = [
+    path('', views.home, name='home'),
+]
+--------------
+main urls.py
+--------------------
+from django.contrib import admin
+from django.urls import path,include
+
+urlpatterns = [
+    path('', include('calc.urls')),
+    path('admin/', admin.site.urls),
+]
+-------------------------------
+views.py
+-------------------------------
+from django.shortcuts import render
+from django.http import HttpResponse
+# Create your views here.
+def home(request):
+    return HttpResponse("hello world");
+-------------------------
 Git commands>
 git add .
 git commit -m "some message"

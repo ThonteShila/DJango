@@ -4,6 +4,4 @@ from django.http import HttpResponse
 def home(request):
     return HttpResponse("hello world");
 
-def hellowords(request):
-    return HttpResponse("hello hellowords");
     
