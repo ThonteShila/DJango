@@ -53,6 +53,14 @@ done changes in setting.py added path
 do know view.py to render the html as below
 def home(request):
     return render(request,'home.html');
+
+Dynamic data>view.py>
+    def home(request):
+    return render(request,'home.html',{'fName':'Shila', 'lName':'Kamlapure'});
+home.html>
+    <h2>hello world from {{fName}} {{lName}}</h2>
+
+
 ---------------------------------------------------------------
 
 
