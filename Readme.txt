@@ -43,7 +43,21 @@ from django.http import HttpResponse
 def home(request):
     return HttpResponse("hello world");
 -------------------------
+create template folder in telusko
+
+created html file
+
+done changes in setting.py added path
+'DIRS': [os.path.join(BASE_DIR,'templates')],
+
+do know view.py to render the html as below
+def home(request):
+    return render(request,'home.html');
+---------------------------------------------------------------
+
+
 Git commands>
 git add .
 git commit -m "some message"
 git push origin Develop
+---------------------------------------------------------------
