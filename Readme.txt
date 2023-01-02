@@ -60,6 +60,45 @@ Dynamic data>view.py>
 home.html>
     <h2>hello world from {{fName}} {{lName}}</h2>
 
+cal app
+adding two no
+reult.html added in template.html
+{% extends 'master.html' %}
+
+{% block content %}
+Result : {{result}}
+{% endblock %}
+
+
+---------------------------------
+view.py
+GET-to take no as response after request to from and adding no
+
+def add(request):
+    val1=int(request.GET['num1'])
+    val2=int(request.GET['num2'])
+    res=val1+val2
+    return render(request,'result.html',{'result':res})
+
+-----------------------------------
+url.py of calc
+urlpatterns = [
+    path('', views.home, name='home'),path('add',views.add,name='add')]
+---------------------------------
+
+
+To add form in webapp
+
+ 
+{% block content %}
+<h1>Home Page by {{fName}} {{lName}}</h1>
+<form action="add">
+    Enter 1st number : <input type="text" name="num1"><br>
+    Enter 2nd number : <input type="text" name="num2"><br>
+    <input type="submit">
+
+</form>
+{% endblock %}
 
 ---------------------------------------------------------------
 
