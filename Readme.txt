@@ -101,7 +101,29 @@ To add form in webapp
 {% endblock %}
 
 ---------------------------------------------------------------
+POST method instead GET
 
+changes home.html
+{% block content %}
+<h1>Home Page by {{fName}} {{lName}}</h1>
+<form action="add" method='POST'>
+    
+    {%csrf_token%}  #used from setting.py for ue of post
+    Enter 1st number : <input type="text" name="num1"><br>
+    Enter 2nd number : <input type="text" name="num2"><br>
+    <input type="submit">
+
+</form>
+
+view.py
+
+def add(request):
+    val1=int(request.POST['num1'])
+    val2=int(request.POST['num2'])
+    res=val1+val2
+    return render(request,'result.html',{'result':res})
+
+---------------------------------------------------------------------------------------------------
 
 Git commands>
 git add .
