@@ -1,6 +1,13 @@
+To add the path of your pip installation to your PATH variable, you can use the Control Panel or the setx command. For example:
+setx PATH "%PATH%;C:\Python34\Scripts"
+
 py --version = dispalys python version (py or python)
 pip install virtualenvwrapper-win = create saperate envronment wrapper space (only first time)
-py -m venv myenv = create new virtual envronment
+
+py -m venv myenv = create new virtual envronment 
+or
+python -m virtualenv myenv
+
 myenv\Scripts\activate = activate and gointo created envronment
 pip install django = install django
 django-admin --version = see version
