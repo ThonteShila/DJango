@@ -1,5 +1,5 @@
-py --version = dispalys python version
-pip install virtualenvwrapper-win = create saperate envronment wrapper space
+py --version = dispalys python version (py or python)
+pip install virtualenvwrapper-win = create saperate envronment wrapper space (only first time)
 py -m venv myenv = create new virtual envronment
 myenv\Scripts\activate = activate and gointo created envronment
 pip install django = install django
